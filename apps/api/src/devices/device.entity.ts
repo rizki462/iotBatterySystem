@@ -1,18 +1,16 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity('devices')
 export class Device {
-    
-    @PrimaryColumn()
-    id: string;
+  @PrimaryColumn()
+  id: string;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    device_key_has: string;
+  @Column({ nullable: true })
+  device_key_hash: string;
 
-    @Column()
-    last_seen_at: Date;
-    
+  @Column({ type: 'timestamp', nullable: true })
+  last_seen_at: Date;
 }

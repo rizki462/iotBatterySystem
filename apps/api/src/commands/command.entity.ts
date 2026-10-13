@@ -9,12 +9,12 @@ export class Command {
   device_id: string;
 
   @Column()
-  type: string; // contoh: 'restart', 'sleep'
+  type: string; // 'restart' | 'sleep' | 'none'
 
   @Column({ nullable: true })
   payload: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
   @Column({ type: 'timestamp', nullable: true })

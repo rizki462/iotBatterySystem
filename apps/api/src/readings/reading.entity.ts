@@ -8,7 +8,7 @@ export class Reading {
   @Column()
   device_id: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamp' })
   received_at: Date;
 
   @Column('float')
